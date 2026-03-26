@@ -1,0 +1,134 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base>
+  <main class="hero">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="logo">
+        <img src="/logo-main.webp" alt="Manntak — Framkvæmdir / Verkefnastýring / Ráðgjöf" width="350" height="100" />
+      </div>
+
+      <div class="contact">
+        <div class="contact-item">
+          <span class="contact-value">Grétar Örn Jóhannsson</span>
+        </div>
+        <div class="contact-divider"></div>
+        <div class="contact-item">
+          <a href="tel:+3548435805" class="contact-value">843-5805</a>
+        </div>
+        <div class="contact-divider"></div>
+        <div class="contact-item">
+          <a href="mailto:gretar@manntak.is" class="contact-value"
+            >gretar@manntak.is</a
+          >
+        </div>
+      </div>
+    </div>
+  </main>
+</Base>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 12vh;
+    background-image: url("/hero.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--color-overlay);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    padding: 2rem 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .logo img {
+    width: 96vw;
+    height: auto;
+  }
+
+  .contact {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem 2.5rem;
+    background: var(--color-blur-bg);
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .contact-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+  }
+
+  .contact-value {
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+
+  a.contact-value:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .contact-divider {
+    width: 1px;
+    height: 2.5rem;
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  @media (max-width: 640px) {
+    .contact {
+      flex-direction: column;
+      gap: 1.25rem;
+      padding: 1.5rem 2rem;
+    }
+
+    .contact-divider {
+      width: 3rem;
+      height: 1px;
+    }
+
+    .contact-item {
+      align-items: center;
+    }
+
+    .logo img {
+      width: 92vw;
+    }
+  }
+</style>
