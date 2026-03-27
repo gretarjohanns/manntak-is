@@ -8,7 +8,7 @@ import Base from "../layouts/Base.astro";
 
     <div class="hero-content">
       <div class="logo">
-        <img src="/logo-main.webp" alt="Manntak — Framkvæmdir / Verkefnastýring / Ráðgjöf" width="350" height="100" />
+        <img src="/logo-main.png" alt="Manntak — Framkvæmdir / Verkefnastýring / Ráðgjöf" width="350" height="100" />
       </div>
 
       <div class="contact">
@@ -63,7 +63,7 @@ import Base from "../layouts/Base.astro";
   }
 
   .logo img {
-    width: 96vw;
+    width: clamp(320px, 45vw, 600px);
     height: auto;
   }
 
@@ -128,7 +128,7 @@ import Base from "../layouts/Base.astro";
     }
 
     .logo img {
-      width: 92vw;
+      width: 75vw;
     }
   }
 </style>
