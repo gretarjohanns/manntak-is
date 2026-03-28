@@ -10,6 +10,8 @@ const {
   title = "Manntak",
   description = "Manntak — Framkvæmdir, verkefnastýring og ráðgjöf. Grétar Örn Jóhannsson, sími 843-5805.",
 } = Astro.props;
+
+const origin = Astro.url.origin;
 ---
 
 <!doctype html>
@@ -21,8 +23,12 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://manntak.is" />
-    <meta property="og:image" content="https://manntak.is/og-image.png" />
+    <meta property="og:url" content={origin} />
+    <meta property="og:image" content={`${origin}/og-image.png`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${origin}/og-image.png`} />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="icon" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -36,7 +42,7 @@ const {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Manntak",
-      "url": "https://manntak.is",
+      "url": origin,
       "telephone": "+3548435805",
       "email": "gretar@manntak.is",
       "description": "Framkvæmdir, verkefnastýring og ráðgjöf",
