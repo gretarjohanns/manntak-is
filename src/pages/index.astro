@@ -7,9 +7,13 @@ import Base from "../layouts/Base.astro";
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
+      <h1 class="sr-only">Manntak — Framkvæmdir, verkefnastýring og ráðgjöf</h1>
+
       <div class="logo">
-        <img src="/logo-main.png" alt="Manntak — Framkvæmdir / Verkefnastýring / Ráðgjöf" width="350" height="100" />
+        <img src="/logo-main-no-sub.png" alt="Manntak" width="350" height="100" />
       </div>
+
+      <p class="tagline">Framkvæmdir · Verkefnastýring · Ráðgjöf</p>
 
       <div class="contact">
         <div class="contact-item">
@@ -17,13 +21,17 @@ import Base from "../layouts/Base.astro";
         </div>
         <div class="contact-divider"></div>
         <div class="contact-item">
-          <a href="tel:+3548435805" class="contact-value">843-5805</a>
+          <a href="tel:+3548435805" class="contact-value contact-link">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            843-5805
+          </a>
         </div>
         <div class="contact-divider"></div>
         <div class="contact-item">
-          <a href="mailto:gretar@manntak.is" class="contact-value"
-            >gretar@manntak.is</a
-          >
+          <a href="mailto:gretar@manntak.is" class="contact-value contact-link">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            gretar@manntak.is
+          </a>
         </div>
       </div>
     </div>
@@ -63,8 +71,16 @@ import Base from "../layouts/Base.astro";
   }
 
   .logo img {
-    width: clamp(400px, 55vw, 800px);
+    width: clamp(280px, 55vw, 800px);
     height: auto;
+  }
+
+  .tagline {
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
   }
 
   .contact {
@@ -99,10 +115,31 @@ import Base from "../layouts/Base.astro";
     letter-spacing: 0.01em;
   }
 
-  a.contact-value:hover {
-    opacity: 0.8;
+  .icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
     text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.3);
     text-underline-offset: 3px;
+    transition: text-decoration-color 0.2s;
+  }
+
+  .contact-link:hover {
+    text-decoration-color: rgba(255, 255, 255, 0.9);
+    opacity: 1;
+  }
+
+  .contact-link:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.6);
+    outline-offset: 4px;
+    border-radius: 2px;
   }
 
   .contact-divider {
@@ -129,6 +166,11 @@ import Base from "../layouts/Base.astro";
 
     .logo img {
       width: 75vw;
+    }
+
+    .tagline {
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
     }
   }
 </style>

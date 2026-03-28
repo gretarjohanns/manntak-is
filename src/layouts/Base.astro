@@ -8,7 +8,7 @@ interface Props {
 
 const {
   title = "Manntak",
-  description = "Manntak — Grétar Örn Jóhannsson",
+  description = "Manntak — Framkvæmdir, verkefnastýring og ráðgjöf. Grétar Örn Jóhannsson, sími 843-5805.",
 } = Astro.props;
 ---
 
@@ -22,6 +22,7 @@ const {
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://manntak.is" />
+    <meta property="og:image" content="https://manntak.is/og-image.png" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="icon" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,6 +32,21 @@ const {
       rel="stylesheet"
     />
     <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Manntak",
+      "url": "https://manntak.is",
+      "telephone": "+3548435805",
+      "email": "gretar@manntak.is",
+      "description": "Framkvæmdir, verkefnastýring og ráðgjöf",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+3548435805",
+        "email": "gretar@manntak.is"
+      }
+    })} />
   </head>
   <body>
     <slot />
